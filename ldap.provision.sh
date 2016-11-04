@@ -13,7 +13,7 @@ sed -i '/^\/\/ $servers->setValue(\x27login\x27,\x27attr\x27,\x27dn\x27)/s/\/\//
 sed -i '/^$servers->setValue(\x27login\x27,\x27attr\x27,\x27uid\x27)/s/^/\/\//'  /etc/phpldapadmin/config.php
 
 # Add local subnet to the Allow list on /etc/httpd/conf.d/phpldapadmin.conf
-sed -i '/Allow from 127.0.0.1/s/$/ 10.0.2.0\/24/' /etc/httpd/conf.d/phpldapadmin.conf
+sed -i '/Allow from 127.0.0.1/s/$/ 10.0.2.0\/24/ 192.168.50.0\/24/' /etc/httpd/conf.d/phpldapadmin.conf
 
 chkconfig httpd on
 service httpd restart

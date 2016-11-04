@@ -6,6 +6,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "bmcgonigle/centos68"
 
   config.vm.define "ml" do |ml|
+          ml.vm.network "public_network", ip: "192.168.50.10"
 	  ml.vm.hostname = "ml.og.com"
 	  ml.vm.network "forwarded_port", guest: 7999, host: 7999
 	  ml.vm.network "forwarded_port", guest: 8000, host: 8000
@@ -17,7 +18,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "ldap" do |ldap|
-	#  ldap.vm.network "private_network", ip: "192.168.50.4"
+          ldap.vm.network "public_network", ip: "192.168.50.15"
 	  ldap.vm.hostname = "ldap.og.com"
 	  ldap.vm.network "forwarded_port", guest: 80, host: 8389
 
