@@ -12,6 +12,7 @@ Vagrant.configure("2") do |config|
 	  ml.vm.network "forwarded_port", guest: 8000, host: 8000
 	  ml.vm.network "forwarded_port", guest: 8001, host: 8001
 	  ml.vm.network "forwarded_port", guest: 8003, host: 8003
+	  ml.vm.network "forwarded_port", guest: 8010, host: 8010
 	  
 	  ml.vm.provision "shell",
             path: "ml.provision.sh"
